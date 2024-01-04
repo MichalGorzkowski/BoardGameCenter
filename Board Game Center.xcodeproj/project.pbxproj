@@ -15,6 +15,8 @@
 		FB47DA932B47186B00B346A5 /* Board_Game_CenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB47DA922B47186B00B346A5 /* Board_Game_CenterTests.swift */; };
 		FB47DA9D2B47186B00B346A5 /* Board_Game_CenterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB47DA9C2B47186B00B346A5 /* Board_Game_CenterUITests.swift */; };
 		FB47DA9F2B47186B00B346A5 /* Board_Game_CenterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB47DA9E2B47186B00B346A5 /* Board_Game_CenterUITestsLaunchTests.swift */; };
+		FB47DAAC2B471A6800B346A5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB47DAAB2B471A6800B346A5 /* LoginView.swift */; };
+		FB47DAAE2B471A9B00B346A5 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB47DAAD2B471A9B00B346A5 /* RegistrationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		FB47DA982B47186B00B346A5 /* Board Game CenterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Board Game CenterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB47DA9C2B47186B00B346A5 /* Board_Game_CenterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board_Game_CenterUITests.swift; sourceTree = "<group>"; };
 		FB47DA9E2B47186B00B346A5 /* Board_Game_CenterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board_Game_CenterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FB47DAAB2B471A6800B346A5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		FB47DAAD2B471A9B00B346A5 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 			children = (
 				FB47DA7F2B47186A00B346A5 /* Board_Game_CenterApp.swift */,
 				FB47DA812B47186A00B346A5 /* ContentView.swift */,
+				FB47DAAB2B471A6800B346A5 /* LoginView.swift */,
+				FB47DAAD2B471A9B00B346A5 /* RegistrationView.swift */,
 				FB47DA832B47186A00B346A5 /* Item.swift */,
 				FB47DA852B47186B00B346A5 /* Assets.xcassets */,
 				FB47DA872B47186B00B346A5 /* Preview Content */,
@@ -262,7 +268,9 @@
 			files = (
 				FB47DA822B47186A00B346A5 /* ContentView.swift in Sources */,
 				FB47DA842B47186A00B346A5 /* Item.swift in Sources */,
+				FB47DAAC2B471A6800B346A5 /* LoginView.swift in Sources */,
 				FB47DA802B47186A00B346A5 /* Board_Game_CenterApp.swift in Sources */,
+				FB47DAAE2B471A9B00B346A5 /* RegistrationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
