@@ -8,52 +8,62 @@
 import SwiftUI
 
 struct LoginView: View {
+    @EnvironmentObject var authManager: AuthManager
+    
     @State private var email: String = ""
     @State private var password: String = ""
 
     var body: some View {
-        VStack {
-            Spacer()
-            
-            Text("Login")
-                .font(.title)
-                .padding()
-
-            TextField("E-mail", text: $email)
-                .padding()
-                .autocapitalization(.none)
-                .keyboardType(.emailAddress)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-
-            SecureField("Password", text: $password)
-                .padding()
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-
-            Button(action: {
-                // TODO: Firebase code for login here
-            }) {
-                Text("Log in")
-                    .foregroundColor(.white)
+        NavigationStack {
+            VStack {
+                Spacer()
+                
+                Text("Login")
+                    .font(.title)
                     .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.blue)
-                    .cornerRadius(10)
+
+                TextField("E-mail", text: $email)
+                    .padding()
+                    .autocapitalization(.none)
+                    .disableAutocorrection(true)
+                    .keyboardType(.emailAddress)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+
+                SecureField("Password", text: $password)
+                    .padding()
+                    .autocapitalization(.none)
+                    .disableAutocorrection(true)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+
+                Button(action: {
+                    guard !email.isEmpty, !password.isEmpty else {
+                        return
+                    }
+                    
+                    authManager.signIn(email: email, password: password)
+                }) {
+                    Text("Log in")
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                }
+                .padding()
+
+                Spacer()
+                
+                Button(action: {
+                    authManager.switchView()
+                }) {
+                    Text("Don't have an account? Register")
+                }
+                .padding()
+                
             }
             .padding()
-
-            Spacer()
-
-            NavigationLink(
-                destination: RegistrationView(),
-                label: {
-                    Text("Don't have an account? Register")
-                        .foregroundColor(.blue)
-                }
-            )
-            .padding()
-
         }
-        .padding()
+        
     }
 }
 

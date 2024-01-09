@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RegistrationView: View {
+    @EnvironmentObject var authManager: AuthManager
+    
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var confirmPassword: String = ""
@@ -23,19 +25,28 @@ struct RegistrationView: View {
             TextField("E-mail", text: $email)
                 .padding()
                 .autocapitalization(.none)
+                .disableAutocorrection(true)
                 .keyboardType(.emailAddress)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
 
             SecureField("Password", text: $password)
                 .padding()
+                .autocapitalization(.none)
+                .disableAutocorrection(true)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
 
             SecureField("Confirm password", text: $confirmPassword)
                 .padding()
+                .autocapitalization(.none)
+                .disableAutocorrection(true)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
 
             Button(action: {
-                // TODO: Firebase code for registration here
+                guard !email.isEmpty, !password.isEmpty, !confirmPassword.isEmpty else {
+                    return
+                }
+                
+                authManager.signUp(email: email, password: password)
             }) {
                 Text("Register")
                     .foregroundColor(.white)
@@ -48,13 +59,11 @@ struct RegistrationView: View {
 
             Spacer()
 
-            NavigationLink(
-                destination: LoginView(),
-                label: {
-                    Text("Already have an account? Log in")
-                        .foregroundColor(.blue)
-                }
-            )
+            Button(action: {
+                authManager.switchView()
+            }) {
+                Text("Already have an account? Log in")
+            }
             .padding()
 
         }
