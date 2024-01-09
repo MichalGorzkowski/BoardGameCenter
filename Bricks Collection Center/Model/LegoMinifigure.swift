@@ -9,9 +9,27 @@ import Foundation
 
 
 struct LegoMinifigure: Codable {
-    let id: String
-    let title: String
-    let numberOfPieces: Int
-    let imageUrl: String
-    let url: String
+    let id = UUID()
+    let setNum: String
+    let name: String
+    let numParts: Int
+    let setImgURL: String
+    let setURL: String
+    let lastModifiedDt: String
+    
+    enum CodingKeys: String, CodingKey {
+        case setNum = "set_num"
+        case name
+        case numParts = "num_parts"
+        case setImgURL = "set_img_url"
+        case setURL = "set_url"
+        case lastModifiedDt = "last_modified_dt"
+    }
+}
+
+struct LegoMinifigureList: Decodable {
+    let count: Int
+    let next: String?
+    let previous: String?
+    let results: [LegoMinifigure]
 }
