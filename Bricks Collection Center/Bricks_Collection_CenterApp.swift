@@ -1,6 +1,6 @@
 //
-//  Board_Game_CenterApp.swift
-//  Board Game Center
+//  Bricks_Collection_CenterApp.swift
+//  Bricks Collection Center
 //
 //  Created by Michał Gorzkowski on 04/01/2024.
 //
@@ -18,7 +18,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 }
 
 @main
-struct Board_Game_CenterApp: App {
+struct Bricks_Collection_CenterApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {

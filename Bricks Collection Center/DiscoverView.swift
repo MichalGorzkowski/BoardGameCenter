@@ -1,6 +1,6 @@
 //
 //  DiscoverView.swift
-//  Board Game Center
+//  Bricks Collection Center
 //
 //  Created by Michał Gorzkowski on 09/01/2024.
 //
