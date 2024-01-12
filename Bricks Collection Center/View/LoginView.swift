@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @EnvironmentObject var authManager: AuthManager
+    @EnvironmentObject var authManager: FirebaseManager
     
     @State private var email: String = ""
     @State private var password: String = ""

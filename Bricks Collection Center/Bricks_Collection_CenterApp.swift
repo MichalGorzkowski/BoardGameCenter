@@ -23,7 +23,7 @@ struct Bricks_Collection_CenterApp: App {
 
     var body: some Scene {
         WindowGroup {
-            let authManager = AuthManager()
+            let authManager = FirebaseManager()
             ContentView()
                 .environmentObject(authManager)
         }

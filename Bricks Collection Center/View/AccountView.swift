@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AccountView: View {
-    @EnvironmentObject var authManager: AuthManager
+    @EnvironmentObject var authManager: FirebaseManager
 
     var body: some View {
         VStack {

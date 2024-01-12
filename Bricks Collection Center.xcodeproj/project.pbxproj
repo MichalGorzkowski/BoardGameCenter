@@ -32,7 +32,7 @@
 		FB47DAC72B47207F00B346A5 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = FB47DAC62B47207F00B346A5 /* FirebaseFunctions */; };
 		FB47DAC92B47207F00B346A5 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = FB47DAC82B47207F00B346A5 /* FirebaseMessaging */; };
 		FB47DACB2B47207F00B346A5 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = FB47DACA2B47207F00B346A5 /* FirebaseStorage */; };
-		FB47DACE2B47221E00B346A5 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB47DACD2B47221E00B346A5 /* AuthManager.swift */; };
+		FB47DACE2B47221E00B346A5 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB47DACD2B47221E00B346A5 /* FirebaseManager.swift */; };
 		FB79534A2B4D850600F6EE46 /* Bricks_Collection_CenterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB47DA7F2B47186A00B346A5 /* Bricks_Collection_CenterApp.swift */; };
 		FB79534C2B4D86D000F6EE46 /* LegoTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB79534B2B4D86D000F6EE46 /* LegoTheme.swift */; };
 		FB79534E2B4D879D00F6EE46 /* LegoMinifigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB79534D2B4D879D00F6EE46 /* LegoMinifigure.swift */; };
@@ -78,7 +78,7 @@
 		FB47DAAF2B471E1600B346A5 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 		FB47DAB32B471E8900B346A5 /* SavedGamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedGamesView.swift; sourceTree = "<group>"; };
 		FB47DAB92B471FF000B346A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		FB47DACD2B47221E00B346A5 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		FB47DACD2B47221E00B346A5 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		FB79534B2B4D86D000F6EE46 /* LegoTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegoTheme.swift; sourceTree = "<group>"; };
 		FB79534D2B4D879D00F6EE46 /* LegoMinifigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegoMinifigure.swift; sourceTree = "<group>"; };
 		FB7953502B4D888400F6EE46 /* RebrickableAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebrickableAPIClient.swift; sourceTree = "<group>"; };
@@ -207,7 +207,7 @@
 		FB47DACC2B4721C600B346A5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				FB47DACD2B47221E00B346A5 /* AuthManager.swift */,
+				FB47DACD2B47221E00B346A5 /* FirebaseManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -379,7 +379,7 @@
 				FB42077F2B4D5CD9009B8F14 /* DiscoverView.swift in Sources */,
 				FB47DAAE2B471A9B00B346A5 /* RegistrationView.swift in Sources */,
 				FB79534E2B4D879D00F6EE46 /* LegoMinifigure.swift in Sources */,
-				FB47DACE2B47221E00B346A5 /* AuthManager.swift in Sources */,
+				FB47DACE2B47221E00B346A5 /* FirebaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

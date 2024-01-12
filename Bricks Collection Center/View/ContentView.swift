@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @EnvironmentObject var authManager: AuthManager
+    @EnvironmentObject var authManager: FirebaseManager
     
     var body: some View {
         Group {
