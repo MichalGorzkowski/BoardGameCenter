@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct LegoSetDetailView: View {
+    @EnvironmentObject var firebaseManager: FirebaseManager
     let legoSet: LegoSet
+    @State var showingSetAddedAlert = false
 
     var body: some View {
         VStack {
@@ -72,6 +74,18 @@ struct LegoSetDetailView: View {
                 .font(.system(size: 9))
 
             Spacer()
+            
+            Button(action: {
+                firebaseManager.addSetToCollection(legoSet: legoSet)
+                showingSetAddedAlert = true
+            }, label: {
+                Text("Add to collection")
+                    .foregroundColor(.blue)
+                    .padding()
+            })
+            .alert("Set added to your collection", isPresented: $showingSetAddedAlert) {
+                Button("OK", role: .cancel) { }
+            }
         }
     }
 }

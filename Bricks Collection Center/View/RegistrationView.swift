@@ -9,7 +9,7 @@ import SwiftUI
 import PhotosUI
 
 struct RegistrationView: View {
-    @EnvironmentObject var authManager: FirebaseManager
+    @EnvironmentObject var firebaseManager: FirebaseManager
     
     @State private var selectedImage: UIImage?
     @State private var photosPickerItem: PhotosPickerItem?
@@ -77,7 +77,7 @@ struct RegistrationView: View {
                     return
                 }
                 
-                authManager.signUp(firstName: firstName, lastName: lastName, email: email, password: password, image: selectedImage ?? nil)
+                firebaseManager.signUp(firstName: firstName, lastName: lastName, email: email, password: password, image: selectedImage ?? nil)
             }) {
                 Text("Register")
                     .foregroundColor(.white)
@@ -91,7 +91,7 @@ struct RegistrationView: View {
             Spacer()
 
             Button(action: {
-                authManager.switchView()
+                firebaseManager.switchView()
             }) {
                 Text("Already have an account? Log in")
             }

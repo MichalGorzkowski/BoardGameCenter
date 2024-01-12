@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @EnvironmentObject var authManager: FirebaseManager
+    @EnvironmentObject var firebaseManager: FirebaseManager
     
     @State private var email: String = ""
     @State private var password: String = ""
@@ -40,7 +40,7 @@ struct LoginView: View {
                         return
                     }
                     
-                    authManager.signIn(email: email, password: password)
+                    firebaseManager.signIn(email: email, password: password)
                 }) {
                     Text("Log in")
                         .foregroundColor(.white)
@@ -54,7 +54,7 @@ struct LoginView: View {
                 Spacer()
                 
                 Button(action: {
-                    authManager.switchView()
+                    firebaseManager.switchView()
                 }) {
                     Text("Don't have an account? Register")
                 }

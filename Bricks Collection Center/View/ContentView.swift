@@ -9,11 +9,11 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @EnvironmentObject var authManager: FirebaseManager
+    @EnvironmentObject var firebaseManager: FirebaseManager
     
     var body: some View {
         Group {
-            if authManager.loggedIn {
+            if firebaseManager.loggedIn {
                 TabView {
                     MainScreenView()
                         .tabItem {
@@ -33,7 +33,7 @@ struct ContentView: View {
                             Text("Search")
                         }
                     
-                    SavedGamesView()
+                    SavedSetsView()
                         .tabItem {
                             Image(systemName: "square.stack.3d.up.fill")
                             Text("Collection")
@@ -46,7 +46,7 @@ struct ContentView: View {
                         }
                 }
             } else {
-                if authManager.isRegistrationViewActive {
+                if firebaseManager.isRegistrationViewActive {
                     RegistrationView()
                 } else {
                     LoginView()
@@ -54,7 +54,7 @@ struct ContentView: View {
             }
         }
         .onAppear {
-            authManager.loggedIn = authManager.isLoggedIn
+            firebaseManager.loggedIn = firebaseManager.isLoggedIn
         }
     }
 }

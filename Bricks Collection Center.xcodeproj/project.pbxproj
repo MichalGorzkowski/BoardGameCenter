@@ -22,7 +22,7 @@
 		FB47DAAC2B471A6800B346A5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB47DAAB2B471A6800B346A5 /* LoginView.swift */; };
 		FB47DAAE2B471A9B00B346A5 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB47DAAD2B471A9B00B346A5 /* RegistrationView.swift */; };
 		FB47DAB02B471E1600B346A5 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB47DAAF2B471E1600B346A5 /* MainScreenView.swift */; };
-		FB47DAB42B471E8900B346A5 /* SavedGamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB47DAB32B471E8900B346A5 /* SavedGamesView.swift */; };
+		FB47DAB42B471E8900B346A5 /* SavedSetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB47DAB32B471E8900B346A5 /* SavedSetsView.swift */; };
 		FB47DABA2B471FF000B346A5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB47DAB92B471FF000B346A5 /* GoogleService-Info.plist */; };
 		FB47DABD2B47207F00B346A5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FB47DABC2B47207F00B346A5 /* FirebaseAnalytics */; };
 		FB47DABF2B47207F00B346A5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FB47DABE2B47207F00B346A5 /* FirebaseAuth */; };
@@ -37,6 +37,8 @@
 		FB79534C2B4D86D000F6EE46 /* LegoTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB79534B2B4D86D000F6EE46 /* LegoTheme.swift */; };
 		FB79534E2B4D879D00F6EE46 /* LegoMinifigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB79534D2B4D879D00F6EE46 /* LegoMinifigure.swift */; };
 		FB7953512B4D888400F6EE46 /* RebrickableAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7953502B4D888400F6EE46 /* RebrickableAPIClient.swift */; };
+		FBFEC5FD2B516AF00017C823 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFEC5FC2B516AF00017C823 /* User.swift */; };
+		FBFEC5FF2B5175580017C823 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFEC5FE2B5175580017C823 /* AccountViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,12 +78,14 @@
 		FB47DAAB2B471A6800B346A5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FB47DAAD2B471A9B00B346A5 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		FB47DAAF2B471E1600B346A5 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
-		FB47DAB32B471E8900B346A5 /* SavedGamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedGamesView.swift; sourceTree = "<group>"; };
+		FB47DAB32B471E8900B346A5 /* SavedSetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedSetsView.swift; sourceTree = "<group>"; };
 		FB47DAB92B471FF000B346A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FB47DACD2B47221E00B346A5 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		FB79534B2B4D86D000F6EE46 /* LegoTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegoTheme.swift; sourceTree = "<group>"; };
 		FB79534D2B4D879D00F6EE46 /* LegoMinifigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegoMinifigure.swift; sourceTree = "<group>"; };
 		FB7953502B4D888400F6EE46 /* RebrickableAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebrickableAPIClient.swift; sourceTree = "<group>"; };
+		FBFEC5FC2B516AF00017C823 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FBFEC5FE2B5175580017C823 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +128,7 @@
 				FB47DAAB2B471A6800B346A5 /* LoginView.swift */,
 				FB47DAAD2B471A9B00B346A5 /* RegistrationView.swift */,
 				FB47DAAF2B471E1600B346A5 /* MainScreenView.swift */,
-				FB47DAB32B471E8900B346A5 /* SavedGamesView.swift */,
+				FB47DAB32B471E8900B346A5 /* SavedSetsView.swift */,
 				FB42077A2B4D5A75009B8F14 /* SearchView.swift */,
 				FB42077C2B4D5BFA009B8F14 /* AccountView.swift */,
 				FB42077E2B4D5CD9009B8F14 /* DiscoverView.swift */,
@@ -140,6 +144,7 @@
 				FB4207822B4D77D1009B8F14 /* LegoSet.swift */,
 				FB79534B2B4D86D000F6EE46 /* LegoTheme.swift */,
 				FB79534D2B4D879D00F6EE46 /* LegoMinifigure.swift */,
+				FBFEC5FC2B516AF00017C823 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -208,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				FB47DACD2B47221E00B346A5 /* FirebaseManager.swift */,
+				FBFEC5FE2B5175580017C823 /* AccountViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -368,9 +374,11 @@
 				FB0D1C1C2B4DF45E00E7910A /* LegoSetSearchRowView.swift in Sources */,
 				FB47DA822B47186A00B346A5 /* ContentView.swift in Sources */,
 				FB47DAB02B471E1600B346A5 /* MainScreenView.swift in Sources */,
+				FBFEC5FF2B5175580017C823 /* AccountViewModel.swift in Sources */,
 				FB79534A2B4D850600F6EE46 /* Bricks_Collection_CenterApp.swift in Sources */,
-				FB47DAB42B471E8900B346A5 /* SavedGamesView.swift in Sources */,
+				FB47DAB42B471E8900B346A5 /* SavedSetsView.swift in Sources */,
 				FB47DAAC2B471A6800B346A5 /* LoginView.swift in Sources */,
+				FBFEC5FD2B516AF00017C823 /* User.swift in Sources */,
 				FB0D1C1A2B4DEC5500E7910A /* LegoSetDetailView.swift in Sources */,
 				FB42077B2B4D5A75009B8F14 /* SearchView.swift in Sources */,
 				FB4207832B4D77D1009B8F14 /* LegoSet.swift in Sources */,

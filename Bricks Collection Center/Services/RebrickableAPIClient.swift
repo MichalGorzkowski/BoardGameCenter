@@ -44,4 +44,34 @@ class RebrickableAPIClient {
 
         task.resume()
     }
+    
+    func searchLegoSetBySetNum(setNum: String, completion: @escaping (Result<LegoSet, Error>) -> Void) {
+        let baseURL = "https://rebrickable.com/api/v3/lego/sets/"
+        let setURL = baseURL + setNum + "/"
+
+        guard let url = URL(string: setURL) else {
+            completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue(apiKey, forHTTPHeaderField: "Authorization")
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                completion(.failure(error ?? NSError(domain: "Unknown error", code: 0, userInfo: nil)))
+                return
+            }
+
+            do {
+                let legoSet = try JSONDecoder().decode(LegoSet.self, from: data)
+                completion(.success(legoSet))
+            } catch {
+                completion(.failure(error))
+            }
+        }
+
+        task.resume()
+    }
 }

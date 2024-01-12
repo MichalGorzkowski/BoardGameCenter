@@ -15,8 +15,10 @@ class FirebaseManager: ObservableObject {
     let storage = Storage.storage()
     let db = Firestore.firestore()
     
+    @Published var user: User = User(id: "id", firstName: "firstName", lastName: "lastName", email: "email", photoURL: "photoURL")
     @Published var loggedIn = false
     @Published var isRegistrationViewActive = false
+    @Published var setsInCollectionList = [LegoSet]()
     
     var isLoggedIn: Bool {
         return auth.currentUser != nil
@@ -102,6 +104,76 @@ class FirebaseManager: ObservableObject {
                 "email": email,
                 "photoURL": photoUrl
             ])
+        }
+    }
+    
+    func getUserDataFromFirebase() {
+        let userRef = db.collection("users").document(auth.currentUser?.uid ?? "")
+        
+        userRef.getDocument { (document, error) in
+            guard error == nil else {
+                print("error", error ?? "")
+                return
+            }
+
+            if let document = document, document.exists {
+                let data = document.data()
+                if let data = data {
+                    print("data", data)
+                    self.user.id = data["uid"] as? String ?? ""
+                    self.user.firstName = data["firstName"] as? String ?? ""
+                    self.user.lastName = data["lastName"] as? String ?? ""
+                    self.user.email = data["email"] as? String ?? ""
+                    self.user.photoURL = data["photoURL"] as? String ?? ""
+
+                }
+            }
+        }
+    }
+    
+    func addSetToCollection(legoSet: LegoSet) {
+        guard let uid = auth.currentUser?.uid else { return }
+        
+        self.db.collection("users").document(uid).collection("sets").document(legoSet.setNum).setData([
+            "setNum": legoSet.setNum,
+            "name": legoSet.name,
+            "year": legoSet.year,
+            "themeId": legoSet.themeId,
+            "numParts": legoSet.numParts,
+            "setImgURL": legoSet.setImgURL?.absoluteString,
+            "setURL": legoSet.setURL.absoluteString,
+            "lastModifiedDt": legoSet.lastModifiedDt
+        ])
+    }
+    
+    func getUserSetCollectionListFromFirebase() {
+        let userRef = db.collection("users").document(auth.currentUser?.uid ?? "").collection("sets")
+        
+        userRef.getDocuments() { snapshot, error in
+            if error == nil {
+                if let snapshot = snapshot {
+                    
+                    DispatchQueue.main.async {
+                        self.setsInCollectionList = snapshot.documents.map { d in
+                            
+                            let string1 = d["setImgURL"] as? String ?? ""
+                            let string2 = d["setURL"] as? String ?? ""
+                            
+                            return LegoSet(setNum: d["setNum"] as? String ?? "",
+                                           name: d["name"] as? String ?? "",
+                                           year: Int(d["year"] as? String ?? "") ?? -1,
+                                           themeId: Int(d["themeId"] as? String ?? "") ?? -1,
+                                           numParts: Int(d["numParts"] as? String ?? "") ?? -1,
+                                           setImgURL: URL(string: string1) ?? URL(string: "http://wp.pl")!,
+                                           setURL: (URL(string: string2) ?? URL(string: "http://wp.pl"))!,
+                                           lastModifiedDt: d["lastModifiedDt"] as? String ?? "")
+                            
+                        }
+                    }
+                }
+            } else {
+                
+            }
         }
     }
 }
